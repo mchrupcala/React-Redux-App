@@ -31,3 +31,12 @@
     transform: rotate(360deg);
   }
 }
+
+.card-list {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.pokemon-card {
+  width: 30%;
+}

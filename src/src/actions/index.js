@@ -8,8 +8,8 @@ export const FETCH_COIN_FAILURE = 'FETCH_COIN_FAILURE';
 export const getCoins = () => dispatch => {
     dispatch({ type: FETCH_COIN_START });
     axios
-        .get('https://www.coingecko.com/en/api/v3/coins/markets')
+        .get('https://api.pokemontcg.io/v1/cards')
         .then(res =>
-            dispatch({type: FETCH_COIN_SUCCESS, payload: res}))
+            dispatch({type: FETCH_COIN_SUCCESS, payload: res.data.cards}))
             .catch(err => dispatch({type: FETCH_COIN_FAILURE, payload: err}));
 };
